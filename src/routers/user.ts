@@ -1,5 +1,5 @@
 import express from "express"
-import User from "../models/user.js"
+import User from "../models/user.model.js"
 import { auth } from "../middleware/auth.js"
 
 declare module 'express-serve-static-core' {
