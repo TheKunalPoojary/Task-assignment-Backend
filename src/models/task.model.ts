@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const taskSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema(
+  {
     title: {
       type: String,
       required: true,
@@ -13,8 +14,8 @@ const taskSchema = new mongoose.Schema({
     },
     priority: {
       type: String,
-      enum: ['Low', 'Medium', 'High'],
-      default: 'Medium',
+      enum: ["Low", "Medium", "High"],
+      default: "Medium",
     },
     completed: {
       type: Boolean,
@@ -22,14 +23,16 @@ const taskSchema = new mongoose.Schema({
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
       required: true,
     },
     organization: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Organization',
+      ref: "Organization",
       required: true,
     },
-  }, { timestamps: true });
-  
-  export const Task = mongoose.model('Task', taskSchema);
+  },
+  { timestamps: true }
+);
+
+export const Task = mongoose.model("Task", taskSchema);

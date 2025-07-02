@@ -1,6 +1,6 @@
 import express from "express"
 import User from "../models/user.model.js"
-import { auth } from "../middleware/auth.js"
+import { auth } from "../middleware/auth.middleware.js"
 
 declare module 'express-serve-static-core' {
     interface Request {
